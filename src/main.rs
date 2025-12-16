@@ -4,20 +4,6 @@ use syscalls::{
     syscall,
     Sysno
 };
-// trait Int: Copy + std::fmt::Display + std::ops::Mul<Output = Self> {}
-
-// //Implimentations.
-// impl Int for i8 {}
-// impl Int for i16 {}
-// impl Int for i32 {}
-// impl Int for i64 {}
-// impl Int for u8 {}
-// impl Int for u16 {}
-// impl Int for u32 {}
-// impl Int for u64 {}
-// impl Int for usize {}
-// impl Int for f32 {}
-// impl Int for u64 {}
 
 const MAX_BUFFER_PRINTED: usize = 43;
 enum Res<T, E> {
@@ -135,9 +121,6 @@ fn read() -> Res<u64, syscalls::Errno> {
 
 macro_rules! square {
     ($x: expr) => {{
-        //Not needed since we will ensure trait bounds in the caller function.
-        // fn __assert<T: Int>(_: &T) {}
-        // __assert(&$x);
         $x * $x
     }};
 }
